@@ -182,6 +182,5 @@ Compliance packs and enterprise modules are subject to their respective licenses
 To set up your GitHub repository page details:
 
 * **Description:** *Compliance-aware SDLC orchestration engine for high-integrity systems (DO-178C, AS9100, SOC 2). Unifies dev tools, enforces policy-as-code gates, and generates DSSE attestations.*
-* **Website:** `[https://sewline.dev](https://sewline.dev)` *(or docs link)*
 * **Topics/Tags:** `sdlc-orchestration`, `rust`, `compliance-as-code`, `opa-rego`, `dsse-attestation`, `do-178c`, `agent-governance`, `devsecops`
 
