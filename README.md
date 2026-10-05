@@ -1,6 +1,3 @@
-### `README.md`
-
-```markdown
 # Sewline
 
 **Compliance-Aware SDLC Orchestration Engine for High-Integrity Systems**
