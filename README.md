@@ -175,8 +175,6 @@ stages:
 Core orchestration engine and CLI are licensed under the **[MIT License](https://www.google.com/search?q=LICENSE-MIT)**.
 Compliance packs and enterprise modules are subject to their respective licenses.
 
-```
-
 ---
 
 ### GitHub Description Metadata
@@ -187,4 +185,3 @@ To set up your GitHub repository page details:
 * **Website:** `[https://sewline.dev](https://sewline.dev)` *(or docs link)*
 * **Topics/Tags:** `sdlc-orchestration`, `rust`, `compliance-as-code`, `opa-rego`, `dsse-attestation`, `do-178c`, `agent-governance`, `devsecops`
 
-```
