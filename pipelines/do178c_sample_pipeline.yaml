@@ -1,0 +1,40 @@
+name: DO-178C-DAL-A-Flight-Control-Software
+version: "1.0.0"
+compliance_profile: DO-178C-DAL-A
+metadata:
+  system_id: FCS-ACTUATOR-01
+  security_level: HIGH
+
+stages:
+  - id: checkout
+    name: Source Code Sync
+    adapter: adapter-github-actions
+    depends_on: []
+    params:
+      repository: "aero-corp/flight-control-core"
+      ref: "v1.4.0-rc1"
+    gates: []
+
+  - id: requirement_trace
+    name: Jama Requirement Traceability Check
+    adapter: adapter-jama
+    depends_on: ["checkout"]
+    params:
+      project_id: "JAMA-FCS-2026"
+    gates:
+      - id: gate_full_traceability
+        name: 100% High-Level to Low-Level Requirement Coverage
+        policy_rule: sewline.jama.full_coverage
+        enforce: true
+
+  - id: static_analysis
+    name: Parasoft Static Code Analysis
+    adapter: adapter-parasoft
+    depends_on: ["requirement_trace"]
+    params:
+      config: "builtin://MISRA_C_2012"
+    gates:
+      - id: gate_zero_misra_violations
+        name: Zero MISRA C:2012 Violations
+        policy_rule: sewline.parasoft.zero_violations
+        enforce: true

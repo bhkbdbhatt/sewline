@@ -1,0 +1,118 @@
+syntax = "proto3";
+
+package sewline.agent.v1;
+
+enum ScopeAction {
+  SCOPE_ACTION_UNSPECIFIED = 0;
+  SCOPE_ACTION_READ = 1;
+  SCOPE_ACTION_WRITE = 2;
+  SCOPE_ACTION_EXECUTE = 3;
+}
+
+enum RiskLevel {
+  RISK_LEVEL_UNSPECIFIED = 0;
+  RISK_LEVEL_LOW = 1;
+  RISK_LEVEL_MEDIUM = 2;
+  RISK_LEVEL_HIGH = 3;
+  RISK_LEVEL_CRITICAL = 4;
+}
+
+enum ApprovalStatus {
+  APPROVAL_STATUS_UNSPECIFIED = 0;
+  APPROVAL_STATUS_PENDING = 1;
+  APPROVAL_STATUS_APPROVED = 2;
+  APPROVAL_STATUS_REJECTED = 3;
+}
+
+message AgentScope {
+  string resource = 1;      // e.g., "repo:flight-core", "jama:project-12"
+  ScopeAction action = 2;  // READ, WRITE, EXECUTE
+}
+
+message RegisterAgentRequest {
+  string agent_id = 1;
+  string name = 2;
+  string host_platform = 3; // "GitHub Copilot", "Custom LLM", etc.
+  repeated AgentScope scopes = 4;
+}
+
+message RegisterAgentResponse {
+  bool registered = 1;
+  string token = 2;
+  int64 registered_at = 3;
+}
+
+message RequestApprovalRequest {
+  string agent_id = 1;
+  string action_description = 2;
+  RiskLevel risk_level = 3;
+  string context_payload_json = 4;
+}
+
+message RequestApprovalResponse {
+  string approval_id = 1;
+  ApprovalStatus status = 2;
+}
+
+message CheckApprovalRequest {
+  string approval_id = 1;
+}
+
+message CheckApprovalResponse {
+  string approval_id = 1;
+  ApprovalStatus status = 2;
+  string reviewer_id = 3;
+  string rationale = 4;
+}
+
+message ResolveApprovalRequest {
+  string approval_id = 1;
+  string reviewer_id = 2;
+  bool approve = 3;
+  string rationale = 4;
+}
+
+message ResolveApprovalResponse {
+  bool success = 1;
+  ApprovalStatus new_status = 2;
+}
+
+message SendMessageRequest {
+  string sender_agent_id = 1;
+  string target_agent_id = 2;
+  string session_id = 3;
+  string payload_json = 4;
+}
+
+message SendMessageResponse {
+  string message_id = 1;
+  int64 timestamp = 2;
+}
+
+message AuditQueryRequest {
+  string agent_id = 1;
+  int64 start_timestamp = 2;
+  int64 limit = 3;
+}
+
+message AuditLogEntry {
+  string entry_id = 1;
+  string agent_id = 2;
+  string event_type = 3;
+  string payload_hash = 4;
+  string payload_json = 5;
+  int64 timestamp = 6;
+}
+
+message AuditQueryResponse {
+  repeated AuditLogEntry entries = 1;
+}
+
+service AgentGovernanceService {
+  rpc RegisterAgent(RegisterAgentRequest) returns (RegisterAgentResponse);
+  rpc RequestApproval(RequestApprovalRequest) returns (RequestApprovalResponse);
+  rpc CheckApproval(CheckApprovalRequest) returns (CheckApprovalResponse);
+  rpc ResolveApproval(ResolveApprovalRequest) returns (ResolveApprovalResponse);
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+  rpc QueryAuditTrail(AuditQueryRequest) returns (AuditQueryResponse);
+}
