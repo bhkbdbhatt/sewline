@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewline - Compliance-Aware SDLC Orchestration</title>
+    <meta name="description" content="Sewline is the compliance-aware SDLC orchestration engine for high-integrity systems. Policy-as-Code gates, DSSE attestations, and full traceability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Sewline</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#compliance" class="nav-link">Compliance</a></li>
+                <li class="nav-item"><a href="#sponsor" class="nav-link">Sponsor</a></li>
+                <li class="nav-item"><a href="https://github.com/bhk-bdbhatt/sewline" class="nav-link nav-link-github" target="_blank" rel="noopener">GitHub</a></li>
+                <li class="nav-item"><a href="https://github.com/bhk-bdbhatt/sewline#readme" class="nav-link nav-link-docs" target="_blank" rel="noopener">Docs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Compliance-Aware Orchestration</div>
+            <h1 class="hero-title">Orchestrate. Gate. Attest.<br>Ship with Confidence.</h1>
+            <p class="hero-subtitle">Sewline is the missing compliance and orchestration layer for high-integrity software. Convert regulatory guidelines into executable Policy-as-Code gates with tamper-evident attestations.</p>
+            <div class="hero-actions">
+                <a href="https://github.com/bhk-bdbhatt/sewline" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+                <a href="#sponsor" class="btn btn-secondary">Support the Project</a>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for High-Integrity Engineering</h2>
+                <p class="section-subtitle">Everything you need to orchestrate compliance across your toolchain</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3 class="feature-title">Plugin-Based Adapters</h3>
+                    <p class="feature-description">Unified adapters for GitHub Actions, Parasoft, Jama, GitLab CI, Jenkins, and VectorCast without code changes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Policy-as-Code Gates</h3>
+                    <p class="feature-description">Enforce DO-178C, AS9100, SOC 2, FedRAMP, and CMMC as executable OPA/Rego policies inline with your pipeline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔏</div>
+                    <h3 class="feature-title">DSSE Attestations</h3>
+                    <p class="feature-description">Automatically generate signed, content-addressed in-toto DSSE evidence for every passed or failed stage gate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Agent Governance</h3>
+                    <p class="feature-description">Track AI agents with fine-grained scoping, human-in-the-loop approvals, and immutable audit logs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕸️</div>
+                    <h3 class="feature-title">Traceability Graph</h3>
+                    <p class="feature-description">Built-in lineage graph linking Requirements → Code → Analysis → Deployment → Incident across executions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Declarative Workflows</h3>
+                    <p class="feature-description">Define complex compliance workflows in YAML/JSON with conditional branches, parallel execution, and gates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section id="compliance" class="compliance">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compliance Standards Supported</h2>
+                <p class="section-subtitle">Built for the most demanding regulated environments</p>
+            </div>
+            <div class="compliance-grid">
+                <div class="compliance-badge">DO-178C (DAL A-E)</div>
+                <div class="compliance-badge">AS9100</div>
+                <div class="compliance-badge">SOC 2</div>
+                <div class="compliance-badge">FedRAMP</div>
+                <div class="compliance-badge">CMMC</div>
+                <div class="compliance-badge">ISO 26262 Ready</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor" class="sponsor">
+        <div class="container">
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <h2 class="sponsor-title">Sponsor Sewline</h2>
+                    <p class="sponsor-subtitle">Help us build the future of compliance-aware software engineering</p>
+                </div>
+                <p class="sponsor-description">Your sponsorship helps maintain and improve Sewline, enables better compliance tooling for regulated industries, and supports open-source development of critical infrastructure software.</p>
+                
+                <div class="sponsor-platforms">
+                    <a href="https://github.com/sponsors/bhk-bdbhatt" class="sponsor-btn sponsor-github" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub Sponsors</span>
+                    </a>
+                    <a href="https://ko-fi.com/" class="sponsor-btn sponsor-kofi" target="_blank" rel="noopener">
+                        <span>☕</span>
+                        <span>Ko-fi</span>
+                    </a>
+                    <a href="https://opencollective.com/incognito-621471c5" class="sponsor-btn sponsor-oc" target="_blank" rel="noopener">
+                        <span>💚</span>
+                    <span>Open Collective</span>
+                    </a>
+                    <a href="https://www.patreon.com/BhargavBhatt" class="sponsor-btn sponsor-patreon" target="_blank" rel="noopener">
+                        <span>🎨</span>
+                        <span>Patreon</span>
+                    </a>
+                    <a href="https://buymeacoffee.com/bhargavbhatt" class="sponsor-btn sponsor-bmc" target="_blank" rel="noopener">
+                        <span>☕</span>
+                        <span>Buy Me a Coffee</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">Sewline</span>
+                    </div>
+                    <p class="footer-description">Compliance-Aware SDLC Orchestration Engine for High-Integrity Systems</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Project</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/bhk-bdbhatt/sewline" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://github.com/bhk-bdbhatt/sewline#readme" target="_blank" rel="noopener">Documentation</a></li>
+                        <li><a href="https://github.com/bhk-bdbhatt/sewline/blob/main/LICENSE-MIT" target="_blank" rel="noopener">License (MIT)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/bhk-bdbhatt/sewline/issues" target="_blank" rel="noopener">Issues</a></li>
+                        <li><a href="https://github.com/bhk-bdbhatt/sewline/discussions" target="_blank" rel="noopener">Discussions</a></li>
+                        <li><a href="#sponsor">Sponsor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sewline. Licensed under MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
